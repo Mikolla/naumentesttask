@@ -1,0 +1,19 @@
+<html>
+
+<body>
+<div align="center">
+    <form action="/editmessage" method="post">
+        <input type="hidden" name="id" value="{{message.id}}">
+
+        <label for="uMessage">Заметка:</label>
+        <input type="text" id="uMessage" name="text" placeholder="Введите заметку" value="{{message.text}}" />
+
+        <label for="uTag">Заголовок:</label>
+        <input type="text" id="uTag" name="tag" placeholder="Заголовок" value="{{message.tag}}">
+
+        <button type="submit">Сохранить</button>
+    </form>
+</div>
+
+</body>
+</html>

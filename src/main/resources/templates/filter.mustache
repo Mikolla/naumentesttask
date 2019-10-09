@@ -1,0 +1,58 @@
+<html>
+
+<body>
+<div align="center">
+    <form method="post" action="add">
+        <label for="uMessage">Заметка:</label>
+        <input type="text" id="uMessage" name="text" placeholder="Введите заметку" />
+        <label for="uTag">Заголовок:</label>
+        <input type="text" id="uTag" name="tag" placeholder="Заголовок">
+        <button type="submit" name="action" value="adding">Добавить</button>
+    </form>
+</div>
+<div align="center">Список заметок</div>
+<div align="right">
+<form method="post" action="filter">
+    <label for="fTag">фильтр по заголовку:</label>
+    <input type="text" id="fTag"  name="filter" placeholder="Заметка">
+    <button type="submit" name="action" value="filterTag">Найти</button>
+</form>
+    <form method="post" action="filter">
+        <label for="fMes">фильтр по содержанию заметки:</label>
+        <input type="text" id="fMes"  name="filter" placeholder="Заметка">
+        <button type="submit" name="action" value="filterMes">Найти</button>
+    </form>
+</div>
+
+<div align="center">
+        <table border="1" cellpadding="5">
+
+            <tr>
+                <th>ID</th>
+                <th>Заметка</th>
+                <th>Заголовок</th>
+                <th>Actions</th>
+            </tr>
+            {{#messages}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{text}}</td>
+                    <td>{{tag}}</td>
+                    <td>
+                        <a href="/editmessage?id={{id}}">Edit&Read</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="/delmessage?id={{id}}">Delete</a>
+                    </td>
+                </tr>
+            {{/messages}}
+
+        </table>
+
+    <a href="/delmessage?id=123213">удалить несуществующую заметку</a>
+
+
+
+</div>
+
+</body>
+</html>
